@@ -189,35 +189,103 @@ Once running, visit:
 - **Swagger UI**: `http://localhost:5000/docs`
 - **ReDoc**: `http://localhost:5000/redoc`
 
-
-
 ## 📊 Usage Examples
 
 ### Using Postman
 
-**Analyze Website:**
-- Method: `POST`
-- URL: `http://localhost:5000/analyze`
-- Headers: `Content-Type: application/json`
-- Body (raw JSON):
-```json
-{
-  "url": "https://example.com"
-}
-```
+#### Get Blog Suggestions
 
-**Get Blog Suggestions:**
+**Request:**
 - Method: `POST`
 - URL: `http://localhost:5000/suggest-blogs`
 - Headers: `Content-Type: application/json`
 - Body (raw JSON):
 ```json
 {
-  "url": "https://example.com"
+  "url": "https://www.codeant.ai/"
 }
 ```
 
+**Response:**
+```json
+{
+  "suggestions": [
+    {
+      "title": "Slash Code Review Time by 50% with AI: Introducing CodeAnt AI",
+      "rationale": "This title immediately grabs attention with a quantifiable benefit (50% time reduction). It prominently features \"Code Review,\" \"AI,\" and the brand name \"CodeAnt AI,\" all essential keywords for search. The \"Introducing CodeAnt AI\" portion clarifies the context."
+    },
+    {
+      "title": "Code Quality & Security Issues Got You Down? CodeAnt AI Can Help!",
+      "rationale": "This title targets pain points that developers often face (\"Code Quality & Security Issues\"). It uses a conversational tone to be more engaging and then offers a solution (\"CodeAnt AI Can Help!\"). The keywords \"Code Quality,\" \"Security Issues,\" and \"CodeAnt AI\" are included, targeting searches related to those problems."
+    },
+    {
+      "title": "Improve Code Health and Efficiency: A Million Reasons to Choose AI-Powered Code Review",
+      "rationale": "This title focuses on the benefits of the platform, such as improved \"Code Health\" and \"Efficiency\". Including a hyperbolic phrase like \"A Million Reasons\" aims to attract clicks. Keywords \"AI-Powered Code Review\" are included."
+    }
+  ]
+}
+```
 
+#### Analyze Website
+
+**Request:**
+- Method: `POST`
+- URL: `http://localhost:5000/analyze`
+- Headers: `Content-Type: application/json`
+- Body (raw JSON):
+```json
+{
+  "url": "https://www.codeant.ai/"
+}
+```
+
+**Response:**
+```json
+{
+  "url": "https://www.codeant.ai/",
+  "title": "CodeAnt AI - AI Code Review",
+  "description": "AI code reviewer that helps teams cut manual code review time and bugs by 50%. Start your 14-days free trial today!",
+  "h1_tags": [],
+  "outbound_links": [
+    "https://www.linkedin.com/company/codeant-ai",
+    "https://www.youtube.com/channel/UCiQ3Gq-FLjsJIf_7twK4Qqg",
+    "https://docs.codeant.ai/quickstart",
+    "https://app.codeant.ai/",
+    "https://www.forbes.com/sites/davidprosser/2025/05/07/worried-about-ai-generated-code-ask-ai-to-review-it/",
+    "https://x.com/CodeAntAI",
+    "https://codeantai.trustcenter.sprinto.com/",
+    "https://docs.codeant.ai/ide/generate_docstring",
+    "https://plugins.jetbrains.com/plugin/23405-codeantai",
+    "https://docs.codeant.ai/control_center/docstring",
+    "https://marketplace.visualstudio.com/items?itemName=codeantai.codeantai"
+  ],
+  "target_keywords": [
+    "code",
+    "security",
+    "codeant",
+    "review",
+    "quality",
+    "issues",
+    "health",
+    "million",
+    "time",
+    "our",
+    "end",
+    "request",
+    "your",
+    "bugs",
+    "what"
+  ],
+  "company_summary": "CodeAnt AI offers an AI-powered code review platform that helps development teams reduce code review time and bugs by over 50%. The platform provides features like AI PR summaries, code quality analysis, application and infrastructure security checks, and secret detection, ultimately improving code quality and team efficiency.",
+  "recommended_channels": [
+    "Content Marketing (Blog, Case Studies)",
+    "Targeted LinkedIn Advertising",
+    "Search Engine Optimization (SEO)",
+    "Developer Community Engagement (e.g., Stack Overflow)",
+    "Industry-Specific Conferences/Webinars"
+  ]
+}
+```
 
 ## 🤝 Contributing
 
